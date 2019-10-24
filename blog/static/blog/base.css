@@ -1,0 +1,29 @@
+
+body{
+  margin-top: 3rem;
+  font-size: 1rem;
+  font-family: Neue Frutiger W01,sans-serif;
+  background: #fff;
+  color: #363b44;
+  background-color: #f2f2f2;
+}
+
+.mainBlog{
+  background-color: #fff;
+  margin: 0 13%;
+  padding: 2rem 10rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+}
+.bg-steel {
+  background-color: #89858c;
+}
+.sticky-top .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+.navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+.navbar-nav .nav-link.active {
+  font-weight: 500;
+}
