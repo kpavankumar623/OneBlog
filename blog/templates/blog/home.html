@@ -1,13 +1,16 @@
 {% extends 'blog/base.html' %}
 {% block content %}
   {% for blog in blogs %}
+
+    <img src="{{ blog.feautured_image.url }}" class="" alt="Cinque Terre"width = '100%' style="height: 300px">
+    <hr>
     <section class="row">
       <h1>{{ blog.blog_title }}</h1>
     </section>
     <section class="row">
-      <img class="img-fluid rounded rounded-circle" src="http://localhost:8000/media/profile_picture/IMG-20190317-WA0003.jpg" height='7px' width="10%" >
+      <img class="img-fluid account-img" src="{{ blog.author.userprofile.profile_picture.url }}" height='10%' width="10%" style="border-radius: 50%">
       <div>
-        <p><a href="#">{{ blog.user.username }}</a></p>
+        <p><a href="#">{{ blog.author.username }}</a></p>
         <p>{{ blog.published_date }}</p>
       </div>
     </section>

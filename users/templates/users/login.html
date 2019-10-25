@@ -6,5 +6,7 @@
     <legend>Login</legend>
     {{ form|crispy }}
     <button class="btn btn-outline-info" type="submit">Login</button>
+    <hr>
+    <small> Need Account <a href="{% url 'register' %}">Register here</a></small>
   </form>
 {% endblock %}
