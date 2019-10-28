@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    <legend>Create Blog</legend>
+    {{ form|crispy }}
+    <button class="btn btn-outline-info" type="submit">Publish</button><hr>
+  </form>
+{% load static %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% endblock %}

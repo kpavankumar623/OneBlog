@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+    <section class="row">
+      <h1><a href='#'> {{ blog.blog_title }}<a></h1>
+    </section>
+    <section class="row">
+      <img class="img-fluid rounded-circle account-img" src="{{ blog.author.userprofile.profile_picture.url }}" height='0%' width="20%">
+      <div>
+        <p><a href="#">{{ blog.author.username }}</a></p>
+        <p>{{ blog.published_date }}</p>
+      </div>
+    </section>
+    <hr>
+    <p>{{ blog.blog_content | safe }}</p>
+    {% if request.user.is_authenticated and object.author == user %}
+    <a class="btn btn-danger" href="{% url 'blogdelete' object.id %}">Delete</a>
+    <a class="btn btn-secondary" href="{% url 'blogupdate' object.id %}">Update</a>
+    {% endif %}
+
+{% endblock %}
