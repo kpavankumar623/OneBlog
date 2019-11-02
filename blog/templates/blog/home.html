@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<title>OneBlog - Home Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Main Stylesheets -->
+  {% load static %}
+	<link rel="stylesheet" href="{% static 'blog/style.css'%}"/>
+
+		<style media="screen">
+  	.btn-hover{
+		background:white;
+		color: purple;
+		border: none;
+		}
+		.btn-hover:hover{
+		background-color: purple;
+		color: white;
+		text-align: center;
+		border: none !important;
+		}
+		</style>
+</head>
+
+<body>
+
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+
+			<a class="navbar-brand ml-lg-4 h4" href="{% url 'blog' %}">OneBlog</a>
+			<!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler border border-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto mr-4">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blogcreate' %}">Create Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login'%} ">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blog' %}">About</a>
+      </li>
+    </ul>
+  </div>
+    </nav>
+  </header>
+
+
+	<section class="blog-section spad mt-4">
+		<div class="container">
+			<div class="row">
+    					<!-- Blog item -->
+                <div class="blog-text text-box text-white">
+                  <h3 class="text-center display-4">Welcome to OneBlog</h3>
+                  <p class="text-justify text-center font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eius-mod tempor incididunt ut labore et dolore magna aliqua
+                     Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
+											<div class="text-center py-2">
+											<button type="button" class="btn btn-lg  col-lg-2 col-md-12 mx-4 btn-hover">Create Blog</button>
+											<button type="button" class="btn btn-lg  col-lg-2 col-md-12 btn-hover">Read Blogs</button>
+										</div>
+                </div>
+              </div>
+        </div>
+
+			<div class="container">
+					<div class="row">
+						<div class="col-xl-4 col-lg-3 col-md-3 col-sm-2">
+									<!-- Blog item -->
+									<div class="blog-item">
+											<img src="{% static 'blog/image2.jpg' %}" alt="picture" class="img-fluid img1">
+											<div class="blog-text text-box text-white">
+												<h3>The best online game is out now!</h3>
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor </p>
+												<div class="media">
+															<img src="{% static 'blog/pic.jpg'%}" alt="pavan" class="mr-3 rounded-circle circ1">
+															<div class="media-body">
+																<h3>Pavan Kumar </h3>
+																<small><i>February 19, 2016</i> </small>
+															</div>
+													</div>
+											</div>
+										</div>
+						</div>
+
+										<div class="col-xl-4 col-lg-3 col-md-3 col-sm-2">
+												<div class="blog-item">
+											<img src="{% static 'blog/image1.jpg' %}" alt="picture" class="img-fluid img1">
+												<div class="blog-text text-box text-white">
+												<h3>The best online game is out now!</h3>
+												<div class="media">
+															<img src="{% static 'blog/pic.jpg'%}" alt="pavan" class="mr-3 rounded-circle circ1">
+															<div class="media-body">
+																<h3>Pavan Kumar </h3>
+																<small><i>February 19, 2016</i></small>
+															</div>
+													</div>
+											</div>
+										</div>
+									</div>
+
+							<div class="col-xl-4 col-lg-3 col-md-3 col-sm-2">
+									<div class="blog-item">
+											<img src="{% static 'blog/image2.jpg' %}" alt="picture" class="img-fluid img1">
+											<div class="blog-text text-box text-white">
+												<h3>The best online game is out now!</h3>
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor </p>
+												<div class="media">
+															<img src="{% static 'blog/pic.jpg'%}" alt="pavan" class="mr-3 rounded-circle circ1">
+															<div class="media-body">
+																<h3>Pavan Kumar </h3>
+																<small><i>February 19, 2016</i> </small>
+															</div>
+													</div>
+											</div>
+										</div>
+						</div>
+
+					</div>
+			</div>
+	</section>
+
+	<footer class="footer-section">
+		<div class="container pb-3">
+			<div class="footer-social d-flex justify-content-center">
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-github"></i></a>
+				<a href="#"><i class="fa fa-facebook"></i></a>
+			</div>
+		</div>
+	</footer>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	</body>
+</html>

@@ -1,14 +1,16 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+<hr>
 <div class="content-section">
+
    <div class="media">
-     <img class="rounded-circle account-img" src="{{ user.userprofile.profile_picture.url }}" width='10%'>
-     <div class="media-body">
-       <h2 class="account-heading">{{ user.username }}</h2>
-       <p class="text-secondary">{{ user.email }}</p>
-     </div>
-   </div>
+          <img src="{{ user.userprofile.profile_picture.url }}" alt="pavan" class="mr-3 rounded-circle circ1">
+          <div class="media-body">
+            <h3>{{ user.username }}</h3>
+            <h6><i>{{ user.email }}</i> </h6>
+          </div>
+      </div>
    <!-- FORM HERE -->
    <hr>
    <form method="POST" enctype="multipart/form-data">

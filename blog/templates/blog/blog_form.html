@@ -1,9 +1,9 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <form method="POST">
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <legend>Create Blog</legend>
+    <legend class="myclass">Create Blog</legend>
     {{ form|crispy }}
     <button class="btn btn-outline-info" type="submit">Publish</button><hr>
   </form>
@@ -11,4 +11,11 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
 <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<!-- <script>
+$(document).ready(function(){
+document.getElementsByClassName("myclass").addEventListener("click", function(){
+  alert("hellow world");
+});
+})
+</script> -->
 {% endblock %}

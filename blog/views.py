@@ -10,7 +10,7 @@ def index(request):
     context = {
         'blogs' : Blog.objects.all()
     }
-    return render(request, 'blog/blog_list.html', context)
+    return render(request, 'blog/home.html', context)
 
 class BlogListView(ListView):
     model = Blog
@@ -21,12 +21,11 @@ class BlogListView(ListView):
 
 class BlogDetailedView(DetailView):
     model = Blog
-    #template_name = 'blog/blog_detail.html'
+    template_name = 'blog/blog_detail.html'
 
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Blog
-    fields = ['blog_title','blog_type','blog_content','feautured_image']
-
+    fields = ['blog_title','blog_type','feautured_image','blog_content']
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
@@ -36,7 +35,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
 
 class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Blog
-    fields = ['blog_title','blog_type','blog_content','feautured_image']
+    fields = ['blog_title','blog_type','feautured_image','blog_content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

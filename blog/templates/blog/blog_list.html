@@ -1,18 +1,87 @@
-{% extends 'blog/base.html' %}
-{% block content %}
-  {% for blog in blogs %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<title>OneBlog - Home Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <section class="row">
-      <h1><a href="{% url 'blogdetail' blog.id %}"> {{ blog.blog_title }} <a></h1>
-    </section>
-    <section class="row">
-      <img class="img-fluid rounded-circle account-img" src="{{ blog.author.userprofile.profile_picture.url }}" height='0%' width="20%">
-      <div>
-        <p><a href="#">{{ blog.author.username }}</a></p>
-        <p>{{ blog.published_date }}</p>
-      </div>
-    </section>
-    <hr>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Main Stylesheets -->
+  {% load static %}
+	<link rel="stylesheet" href="{% static 'blog/style.css'%}"/>
+</head>
 
-  {% endfor %}
-{% endblock %}
+<body>
+
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+
+			<a class="navbar-brand ml-lg-4 h4" href="{% url 'blog' %}">OneBlog</a>
+			<!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler border border-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto mr-4">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blogcreate' %}">Create Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login'%} ">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blog' %}">About</a>
+      </li>
+    </ul>
+  </div>
+    </nav>
+  </header>
+
+  <section class="blog-section spad mt-4">
+    <div class="container">
+      <div class="row">
+{% for blog in blogs %}
+
+                    <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2">
+                          <div class="blog-item">
+                            <a href="{% url 'blogdetail' blog.id %}">
+                               <img src="{{ blog.feautured_image.url }}" alt="picture" class="img-fluid img1">
+                             </a>
+                              <div class="blog-text text-box text-white">
+                            <a href="{% url 'blogdetail' blog.id %}">  <h3>{{ blog.blog_title }}</h3></a>
+                                <p>{{ blog.blog_type }} </p>
+                                <div class="media">
+                                      <img src="{{ blog.author.userprofile.profile_picture.url }}" alt="img" class="mr-3 rounded-circle circ1">
+                                      <div class="media-body">
+                                        <h3>{{ blog.author.username }}</h3>
+                                        <small><i>{{ blog.published_date }}</i> </small>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                    </div>
+
+{% endfor %}
+
+					</div>
+			</div>
+	</section>
+
+	<footer class="footer-section">
+		<div class="container pb-3">
+			<div class="footer-social d-flex justify-content-center">
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-github"></i></a>
+				<a href="#"><i class="fa fa-facebook"></i></a>
+			</div>
+		</div>
+	</footer>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,77 @@
+
+html,
+body {
+	/* height: 100%; */
+	font-family: 'Roboto', sans-serif;
+	font-smoothing: antialiased;
+	font-weight: 500;
+}
+
+.spad {
+	padding-top: 6%;
+	padding-bottom: 6%;
+}
+
+.text-white {
+	color: #fff;
+}
+
+.blog-section {
+	background: #501755;
+}
+
+.blog-item {
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+.img1{
+	height:170px;
+	width: 350px !important;
+	border:1px solid white;
+}
+.circ1{
+	width:60px;
+	height:60px;
+}
+/* ----------------
+Header   Footer section
+*/
+.bg-steel {
+  background-color:  #330d38;
+}
+
+.sticky-top .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+.navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+.navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.footer-section {
+	text-align: center;
+	background: #330d38;
+}
+
+.footer-section .container {
+	position: relative;
+	padding: 1% 1% 1%;
+}
+
+.footer-social a{
+	width: 32px;
+	height: 32px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 20px;
+	margin-left: 13px;
+	transition: all 0.3s;
+}
+
+.footer-social a:hover {
+	background: #b01ba5;
+}

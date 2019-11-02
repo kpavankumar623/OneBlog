@@ -4,20 +4,21 @@ body{
   font-size: 1rem;
   font-family: Neue Frutiger W01,sans-serif;
   background: #fff;
-  color: #363b44;
-  background-color: #f2f2f2;
+  /*color: #363b44;*/
+  background-color: #501755;
 }
 
 .mainBlog{
   background-color: #fff;
-  margin: 0 13%;
-  padding: 2rem 10rem;
+  /* margin: 0 13%; */
+  /* padding: 2rem 10rem; */
   border: 1px solid #d3d3d3;
   border-radius: 5px;
 }
 .bg-steel {
-  background-color: #89858c;
+  background-color:  #330d38;
 }
+
 .sticky-top .navbar-nav .nav-link {
   color: #cbd5db;
 }
@@ -26,4 +27,10 @@ body{
 }
 .navbar-nav .nav-link.active {
   font-weight: 500;
+}
+
+
+.circ1{
+	width:60px;
+	height:60px;
 }
