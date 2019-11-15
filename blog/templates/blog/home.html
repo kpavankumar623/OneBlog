@@ -38,15 +38,27 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto mr-4">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'blogcreate' %}">Create Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'login'%} ">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'blog' %}">About</a>
-      </li>
+			{% if request.user.is_authenticated %}
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'blogcreate' %}">Create Blog</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'profile'%} ">Profile</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+			</li>
+			{% else %}
+	      <li class="nav-item">
+	        <a class="nav-link" href="{% url 'blogcreate' %}">Create Blog</a>
+	      </li>
+				<li class="nav-item">
+	        <a class="nav-link" href="{% url 'login'%} ">Login</a>
+	      </li>
+				<li class="nav-item">
+	        <a class="nav-link" href="{% url 'register' %}">Create profile</a>
+	      </li>
+				{% endif%}
     </ul>
   </div>
     </nav>
@@ -58,14 +70,19 @@
 			<div class="row">
     					<!-- Blog item -->
                 <div class="blog-text text-box text-white">
-                  <h3 class="text-center display-4">Welcome to OneBlog</h3>
-                  <p class="text-justify text-center font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eius-mod tempor incididunt ut labore et dolore magna aliqua
-                     Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
+                  <h3 class="text-center display-4">Hello World!.</h3>
+                  <p class="text-justify text-center font-weight-bold">
+											OneBlog is the Blog sharing application, we can read blogs based on your interest and you can write blog and post(share) here.
+											This application created for sharing thoughts and your view or knowledge of the something,
+											whoever visit this site please write one blog for our
+											community. Enjoy getting some knowledge on reading our blogs here.
+
+										</p>
 											<div class="text-center py-2">
-											<button type="button" class="btn btn-lg  col-lg-2 col-md-12 mx-4 btn-hover">Create Blog</button>
-											<button type="button" class="btn btn-lg  col-lg-2 col-md-12 btn-hover">Read Blogs</button>
+										<a href="{% url 'blogcreate' %}"
+											<button type="button" class="btn btn-lg  col-lg-2 col-md-12 mx-4 btn-hover">Create Blog</button> </a>
+										<a href="{% url 'bloglist' %}"
+											<button type="button" class="btn btn-lg  col-lg-2 col-md-12 btn-hover">Read Blogs</button></a>
 										</div>
                 </div>
               </div>
@@ -126,15 +143,28 @@
 
 					</div>
 			</div>
+			<div class="container">
+				<div class="row">
+	    					<!-- Blog item -->
+	                <div class="blog-text text-box text-white">
+	                  <h6 class="text-left display-4">About us!.</h6>
+	                  <p class="text-justify text-center font-weight-bold">
+											<p> OneBlog application developing with python and django framework for learning django.
+											I decide to make it complete application, app still developing any sugestions, improvments, errors
+										 you find letus know
+										and if you like contribute code in github feel free to reach me by clicking footer socialmedia links. </p>
+	                </div>
+	              </div>
+	        </div>
 	</section>
 
 	<footer class="footer-section">
 		<div class="container pb-3">
 			<div class="footer-social d-flex justify-content-center">
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-github"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="https://www.linkedin.com/in/kpavankumar623/"><i class="fa fa-linkedin"></i></a>
+				<a href="https://twitter.com/kpavankumar623"><i class="fa fa-twitter"></i></a>
+				<a href="https://github.com/kpavankumar623/OneBlog"><i class="fa fa-github"></i></a>
+				<a href="https://www.facebook.com/kpavankumar623"><i class="fa fa-facebook"></i></a>
 			</div>
 		</div>
 	</footer>

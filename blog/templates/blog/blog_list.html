@@ -24,15 +24,27 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto mr-4">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'blogcreate' %}">Create Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'login'%} ">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'blog' %}">About</a>
-      </li>
+			{% if request.user.is_authenticated %}
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'blogcreate' %}">Create Blog</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'profile'%} ">Profile</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+			</li>
+			{% else %}
+	      <li class="nav-item">
+	        <a class="nav-link" href="{% url 'blogcreate' %}">Create Blog</a>
+	      </li>
+				<li class="nav-item">
+	        <a class="nav-link" href="{% url 'login'%} ">Login</a>
+	      </li>
+				<li class="nav-item">
+	        <a class="nav-link" href="{% url 'register' %}">Create profile</a>
+	      </li>
+				{% endif%}
     </ul>
   </div>
     </nav>

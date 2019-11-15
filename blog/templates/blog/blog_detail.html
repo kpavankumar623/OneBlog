@@ -1,15 +1,19 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-
+  <hr>
     <section class="row">
+
       <h1><a href='#'> {{ blog.blog_title }}<a></h1>
     </section>
     <section class="row">
-      <img class="img-fluid rounded-circle account-img" src="{{ blog.author.userprofile.profile_picture.url }}" height='0%' width="20%">
-      <div>
-        <p><a href="#">{{ blog.author.username }}</a></p>
-        <p>{{ blog.published_date }}</p>
-      </div>
+      <div class="media">
+            <img src="{{ blog.author.userprofile.profile_picture.url }}" alt="pavan" class="mr-3 rounded-circle circ1">
+            <div class="media-body">
+              <h3>{{ blog.author.username }}</h3>
+              <small><i>{{ blog.published_date }}</i> </small>
+            </div>
+        </div>
+
     </section>
     <hr>
     <p>{{ blog.blog_content | safe }}</p>
