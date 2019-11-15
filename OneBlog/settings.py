@@ -27,9 +27,6 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 #DEBUG = True#deploy
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'#deploy
 
-import dj_database_url#deploy
-db_from_env = dj_database_url.config(conn_max_age=500)#deploy
-DATABASES['default'].update(db_from_env)#deploy
 
 ALLOWED_HOSTS = []
 
@@ -91,6 +88,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+import dj_database_url#deploy
+#db_from_env = dj_database_url.config(conn_max_age=500)#deploy
+#DATABASES['default'].update(db_from_env)#deploy
+DATABASES = { 'default': dj_database_url.config() }
 
 
 # Password validation
