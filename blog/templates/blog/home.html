@@ -90,10 +90,10 @@
 
 			<div class="container">
 					<div class="row">
+						{% for blog in blogs %}
 						<div class="col-xl-4 col-lg-3 col-md-3 col-sm-2">
 									<!-- Blog item -->
 									<div class="blog-item">
-										{{ blog.1 }}
 										<a href="{% url 'blogdetail' blog.id %}">
 											 <img src="{{ blog.feautured_image.url }}" alt="picture" class="img-fluid img1">
 										 </a>
@@ -110,40 +110,7 @@
 											</div>
 										</div>
 						</div>
-
-										<div class="col-xl-4 col-lg-3 col-md-3 col-sm-2">
-												<div class="blog-item">
-											<img src="{% static 'blog/image1.jpg' %}" alt="picture" class="img-fluid img1">
-												<div class="blog-text text-box text-white">
-												<h3>Comming soon!</h3>
-												<div class="media">
-															<img src="{% static 'blog/pic.jpg'%}" alt="pavan" class="mr-3 rounded-circle circ1">
-															<div class="media-body">
-																<h3>Pavan Kumar </h3>
-																<small><i>February 19, 2016</i></small>
-															</div>
-													</div>
-											</div>
-										</div>
-									</div>
-
-							<div class="col-xl-4 col-lg-3 col-md-3 col-sm-2">
-									<div class="blog-item">
-											<img src="{% static 'blog/image2.jpg' %}" alt="picture" class="img-fluid img1">
-											<div class="blog-text text-box text-white">
-												<h3>coming sooon!</h3>
-												<p>coming soon! </p>
-												<div class="media">
-															<img src="{% static 'blog/pic.jpg'%}" alt="pavan" class="mr-3 rounded-circle circ1">
-															<div class="media-body">
-																<h3>Pavan Kumar </h3>
-																<small><i>February 19, 2016</i> </small>
-															</div>
-													</div>
-											</div>
-										</div>
-						</div>
-
+						{% endfor %}
 					</div>
 			</div>
 			<div class="container">

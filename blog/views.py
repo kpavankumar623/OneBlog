@@ -8,7 +8,7 @@ from .models import Blog
 # Create your views here.
 def index(request):
     context = {
-        'blogs' : Blog.objects.all()
+        'blogs' : Blog.objects.all()[:3]
     }
     return render(request, 'blog/home.html', context)
 
